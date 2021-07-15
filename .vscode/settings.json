@@ -2,7 +2,9 @@
   "java.project.sourcePaths": [
     "strategy",
     "observer",
+    "factoryMethod",
     "decorator",
-    "factoryMethod"
+    "command",
+    "abstractFactory"
   ]
 }

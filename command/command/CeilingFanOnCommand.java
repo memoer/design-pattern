@@ -14,4 +14,9 @@ public class CeilingFanOnCommand implements ICommand {
   public void execute() {
     ceilingFan.on();
   }
+
+  @Override
+  public void undo() {
+    ceilingFan.off();
+  }
 }

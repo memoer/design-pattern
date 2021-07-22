@@ -16,4 +16,9 @@ public class StreoOnWithCDCommand implements ICommand {
     streo.setCD();
     streo.setVolume(11);
   }
+
+  @Override
+  public void undo() {
+    streo.off();
+  }
 }

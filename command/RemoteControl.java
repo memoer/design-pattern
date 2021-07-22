@@ -3,8 +3,9 @@ import command.NoCommand;
 
 // Invoker
 public class RemoteControl {
-  ICommand[] onCommands;
-  ICommand[] offCommands;
+  private ICommand[] onCommands;
+  private ICommand[] offCommands;
+  private ICommand undoCommand;
 
   public RemoteControl() {
     onCommands = new ICommand[7];
@@ -13,6 +14,7 @@ public class RemoteControl {
       onCommands[i] = new NoCommand();
       offCommands[i] = new NoCommand();
     }
+    undoCommand = new NoCommand();
   }
 
   public void setCommand(int slot, ICommand onCommand, ICommand offCommand) {
@@ -21,10 +23,18 @@ public class RemoteControl {
   }
 
   public void onButtonWasPushed(int slot) {
-    onCommands[slot].execute();
+    ICommand command = onCommands[slot];
+    command.execute();
+    undoCommand = command;
   }
 
   public void offButtonWasPushed(int slot) {
-    offCommands[slot].execute();
+    ICommand command = onCommands[slot];
+    command.execute();
+    undoCommand = command;
+  }
+
+  public void undoButtonWasPushed() {
+    this.undoCommand.undo();
   }
 }

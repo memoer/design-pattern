@@ -4,7 +4,7 @@
     "observer",
     "factoryMethod",
     "decorator",
-    "command",
-    "abstractFactory"
+    "abstractFactory",
+    "command"
   ]
 }

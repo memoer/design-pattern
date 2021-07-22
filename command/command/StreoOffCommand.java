@@ -14,4 +14,9 @@ public class StreoOffCommand implements ICommand {
   public void execute() {
     streo.off();
   }
+
+  @Override
+  public void undo() {
+    streo.on();
+  }
 }

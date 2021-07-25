@@ -1,10 +1,7 @@
 {
   "java.project.sourcePaths": [
-    "strategy",
-    "observer",
-    "factoryMethod",
-    "decorator",
-    "abstractFactory",
-    "command"
+    "adapter",
+    "TemplateMethod",
+    "Iterator"
   ]
 }
